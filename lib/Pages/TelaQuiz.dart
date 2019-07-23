@@ -32,6 +32,9 @@ class TelaQuiz extends StatefulWidget {
 }
 
 class _TelaQuizState extends State<TelaQuiz> {
+  int acertos = 0;
+  int erros = 0;
+
   @override
   void initState() {
     super.initState();
@@ -48,6 +51,7 @@ class _TelaQuizState extends State<TelaQuiz> {
     return Container(
       margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
       height: 200,
+
       //height: double.infinity,
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
@@ -98,6 +102,7 @@ class _TelaQuizState extends State<TelaQuiz> {
     setState(() {
       if (!changeScreenQuestion) {
         if (questions[_index].getCorrectAnswer == optionSelected) {
+          acertos++;
           Flushbar(
             messageText: Text(
               'Acertou :)',
@@ -111,6 +116,7 @@ class _TelaQuizState extends State<TelaQuiz> {
             duration: Duration(seconds: 3),
           )..show(context);
         } else {
+          erros++;
           Flushbar(
             messageText: Text(
               'Errou :\'( ',
@@ -139,7 +145,7 @@ class _TelaQuizState extends State<TelaQuiz> {
 
   Widget pageQuiz() {
     if (_index >= questions.length)
-      return Text('finalizou');
+      return PaginaFinalQuiz();
     else
       return SingleChildScrollView(
         child: Container(
@@ -203,12 +209,36 @@ class _TelaQuizState extends State<TelaQuiz> {
         centerTitle: true,
         backgroundColor: Colors.white,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          color: Colors.black38,
-          onPressed: () => Navigator.pop(context, false),
-        ),
+            icon: Icon(Icons.arrow_back),
+            color: Colors.black38,
+            onPressed: () {
+              Navigator.pop(context, false);
+              setState(() {
+                _index = 0;
+                changeScreenQuestion = false;
+                optionSelected = -1;
+              });
+            }),
       ),
       body: pageQuiz(),
+    );
+  }
+
+  Widget PaginaFinalQuiz() {
+    var estiloTexto = TextStyle(fontSize: 30);
+    return Container(
+      padding: EdgeInsets.only(top: 50, left: 80),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Row(
+            children: <Widget>[Text('Acertou: ', style: estiloTexto,), Text('$acertos', style: estiloTexto,)],
+          ),
+          Row(
+            children: <Widget>[Text('Errou: ', style: estiloTexto,), Text('$erros', style: estiloTexto,)],
+          )
+        ],
+      ),
     );
   }
 }
