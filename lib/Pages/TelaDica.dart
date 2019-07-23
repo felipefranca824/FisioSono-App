@@ -75,6 +75,8 @@ class _TelaDicaState extends State<TelaDica> {
 
     return Scaffold(
       appBar: AppBar(
+                title: Text('Dicas', style: TextStyle(color: Colors.black),),
+        centerTitle: true,
         backgroundColor: Colors.white,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
