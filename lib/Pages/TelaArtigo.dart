@@ -26,7 +26,7 @@ class _TelaArtigoState extends State<TelaArtigo> {
       body: MaterialApp(
         routes: {
           "/": (_) => new WebviewScaffold(
-                url: "https://www.google.com",
+                url: "https://lifestyle.sapo.pt/saude/saude-e-medicina/artigos/sono-e-ritmo-biologico",
                 appBar: new AppBar(
                   title: new Text("Widget webview"),
                 ),

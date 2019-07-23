@@ -4,7 +4,15 @@ import '../DataBasaQuestions.dart';
 import 'package:flushbar/flushbar.dart';
 
 DataBaseQuestions dataBase = DataBaseQuestions();
-List<Question> questions = [dataBase.getQuestion0, dataBase.getQuestion1];
+List<Question> questions = [
+  dataBase.getQuestion0,
+  dataBase.getQuestion1,
+  dataBase.getQuestion2,
+  dataBase.getQuestion3,
+  dataBase.getQuestion4,
+  dataBase.getQuestion5,
+  dataBase.getQuestion6
+];
 
 int _index = 0;
 
@@ -29,12 +37,18 @@ class _TelaQuizState extends State<TelaQuiz> {
     super.initState();
     dataBase.q0();
     dataBase.q1();
+    dataBase.q2();
+    dataBase.q3();
+    dataBase.q4();
+    dataBase.q5();
+    dataBase.q6();
   }
 
   Widget _buildBntOption(String menssage, int option) {
     return Container(
       margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
-      height: 60,
+      height: 200,
+      //height: double.infinity,
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -59,25 +73,23 @@ class _TelaQuizState extends State<TelaQuiz> {
   }
 
   Widget _getBntConfirm() {
-    return Container(
+    return Card(
       margin: EdgeInsets.only(top: 50.0, bottom: 10.0),
-      height: 60,
-      alignment: Alignment.centerLeft,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(5)),
-      ),
-      child: SizedBox.expand(
-        child: RaisedButton(
-          color: Colors.green,
-          highlightColor: Colors.transparent,
-          onPressed: optionSelected == -1 ? null : verifyAnswer,
-          child: Text(
-            textBtnConfirm,
-            style: TextStyle(fontSize: 25, color: Colors.black87),
-          ),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+      // height: 60,
+      // alignment: Alignment.centerLeft,
+      // decoration: BoxDecoration(
+      //   borderRadius: BorderRadius.all(Radius.circular(5)),
+      // ),
+      child: RaisedButton(
+        color: Colors.green,
+        highlightColor: Colors.transparent,
+        onPressed: optionSelected == -1 ? null : verifyAnswer,
+        child: Text(
+          textBtnConfirm,
+          style: TextStyle(fontSize: 25, color: Colors.black87),
         ),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
       ),
     );
   }
@@ -201,50 +213,30 @@ class _TelaQuizState extends State<TelaQuiz> {
   }
 }
 
-/*
-
-  Widget pageQuiz() {
-    switch (_index) {
-      case 0:
-        question = dataBase.getQuestion0;
-        break;
-      case 1:
-        question = dataBase.getQuestion1;
-        break;
-        default:
-
-        break;
-    }
-    return SingleChildScrollView(
-      child: Container(
-        margin: EdgeInsets.only(top: 20.0),
-        alignment: Alignment.center,
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Text(
-                question.getQuestion,
-                style: styleQuestion,
-                textAlign: TextAlign.justify,
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 10.0),
-              width: 350,
-              child: Column(
-                children: <Widget>[
-                  _buildBntOption(question.getAnswers[0], 0),
-                  _buildBntOption(question.getAnswers[1], 1),
-                  _buildBntOption(question.getAnswers[2], 2),
-                  _buildBntOption(question.getAnswers[3], 3),
-                  // _getBntConfirm(),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-*/
+// Widget _buildBntOption(String menssage, int option) {
+//   return Container(
+//     margin: EdgeInsets.only(top: 5.0, bottom: 5.0),
+//     height: 200,
+//     //height: double.infinity,
+//     alignment: Alignment.centerLeft,
+//     decoration: BoxDecoration(
+//       borderRadius: BorderRadius.all(Radius.circular(5)),
+//     ),
+//     child: SizedBox.expand(
+//       child: RaisedButton(
+//         color: optionSelected == option && optionSelected != -1
+//             ? Colors.green
+//             : Colors.white,
+//         highlightColor: Colors.transparent,
+//         onPressed: () {
+//           setState(() {
+//             optionSelected = option;
+//           });
+//         },
+//         child: Text(menssage, style: styleAnswers),
+//         shape:
+//             RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+//       ),
+//     ),
+//   );
+// }
