@@ -121,10 +121,10 @@ class DataBaseQuestions {
     String question =
         'O sono é dividido em duas fases distintas, sendo essas chamadas de REM e NREM. A cerca das fases do sono, marque a alternativa que indica o significado correto das siglas citadas acima, respectivamente:';
     List<String> answers = [
-      'A) Movimentos oculares moderados e Sem movimentos oculares  moderados',
-      'B) Movimentos oculares rápidos e Sem Movimentos Oculares Rápidos',
-      'C) Movimentos oculares espaçados e Sem Movimentos oculares espaçados',
-      'D) Movimentos das pálpebras e Sem Movimentos das pálpebras'
+      'A) Movimentos oculares moderados e Sem movimentos oculares moderados.',
+      'B) Movimentos oculares rápidos e Sem Movimentos Oculares Rápidos.',
+      'C) Movimentos oculares espaçados e Sem Movimentos oculares espaçados.',
+      'D) Movimentos das pálpebras e Sem Movimentos das pálpebras.'
     ];
     int correctAnswer = 1;
 
@@ -138,7 +138,7 @@ class DataBaseQuestions {
         'Para se ter um sono de melhor qualidade, é necessário um conjunto de ações e hábitos que quando postas em prática, são efetivas e indubitáveis para potencializar o correto funcionamento dos mecanismos fisiológicos, tal como o sono. Baseado nisso, marque a alternativa que não indica um hábito benéfico para o sono:';
     List<String> answers = [
       'A) Ter horários regulares para dormir e acordar, mesmo nos finais de semana.',
-      'B) Elaboração de uma rotina relaxante antes da hora de dormir . Tal como um bom banho e ouvir música.',
+      'B) Elaboração de uma rotina relaxante antes da hora de dormir. Tal como um bom banho e ouvir música.',
       'C) Evitar ficar na cama quando não está com sono.',
       'D) Usar medicamentos para dormir sem prescrições médicas.',
     ];

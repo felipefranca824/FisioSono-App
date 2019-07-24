@@ -82,7 +82,7 @@ class MyHomePage extends StatelessWidget {
             ),
             ListTile(
               title: Text(
-                'Obter Dicas',
+                'Obter dicas',
                 style: TextStyle(fontSize: 20, color: Colors.black54),
               ),
               onTap: () {
@@ -92,7 +92,7 @@ class MyHomePage extends StatelessWidget {
             ),
             ListTile(
               title: Text(
-                'Aprenda Mais',
+                'Aprenda mais',
                 style: TextStyle(fontSize: 20, color: Colors.black54),
               ),
               onTap: () {

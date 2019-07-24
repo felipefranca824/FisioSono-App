@@ -44,11 +44,13 @@ class _TelaDicaState extends State<TelaDica> {
       Dica('Entre 9 e 12 horas',
           'Dormir demais pode causar descontrole dos ritmos biológicos e indisposição durante o dia. Durma menos! É ideal dormir em média 7-8 horas.'),
     ];
+
+    
     List<Dica> dicas2 = [
       Dica('Sim',
-          'A pessoa não consegue recuperar o que perdeu, embora tenha a sensação que sim. O organismo humano não reage à custa de matemáticas, mesmo que as horas de sono somadas correspondam ao total recomendado. Portanto, o ciclo de sono deve processar-se naturalmente e sem grandes atropelos.'),
-      Dica('Não',
           'Continue assim! Tirar cochilos durante o dia pode atrapalhar o ritmo circadiano do sono.'),
+      Dica('Não',
+          'A pessoa não consegue recuperar o que perdeu, embora tenha a sensação que sim. O organismo humano não reage à custa de matemáticas, mesmo que as horas de sono somadas correspondam ao total recomendado. Portanto, o ciclo de sono deve processar-se naturalmente e sem grandes atropelos.'),
       Dica('Às vezes',
           'Isso pode atrapalhar o seu ritmo circadiano, diminua a frequência com que isso acontece.'),
     ];
